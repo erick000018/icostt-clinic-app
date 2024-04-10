@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'icostt-clinic-app';
-  subtitle = 'es el subti';
 }
