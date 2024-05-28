@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { citaList } from './cita.mock';
+
 
 export interface Tile {
   color: string;
@@ -6,14 +8,14 @@ export interface Tile {
   rows: number;
   text: string;
 }
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-cita',
+  templateUrl: './cita.component.html',
+  styleUrls: ['./cita.component.css']
 })
-export class HomeComponent {
+export class CitaComponent {
 
+  citaList = citaList;
 
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
@@ -21,5 +23,8 @@ export class HomeComponent {
     {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
   ];  
+
+  displayedColumns: string[] = ['id', 'fecha', 'hora', 'cliente','motivo'];
+  dataSource = citaList;
 
 }

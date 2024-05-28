@@ -12,10 +12,10 @@ export class LayoutSidenavComponent {
 
   menuNav = [
     {name: "Home", route: "home", icon: "home"},
-    {name: "Registro", route: "category", icon: "category"},
-    {name: "Asignar cita", route: "product", icon: "category"},
-    {name: "Seguimiento", route: "product", icon: "production_quantity_limits"},
-    {name: "Gestor de notificaciones", route: "product", icon: "category"}
+    {name: "Paciente", route: "paciente", icon: "category"},
+    {name: "Asignar cita", route: "cita", icon: "category"},
+    {name: "Seguimiento", route: "seguimiento", icon: "production_quantity_limits"},
+    {name: "Gestor de notificaciones", route: "notificador", icon: "category"}
   ]
 
   constructor(media: MediaMatcher) {

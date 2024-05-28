@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { servappList } from './servapp-notificador.mock';
 
 export interface Tile {
   color: string;
@@ -8,18 +9,21 @@ export interface Tile {
 }
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-servapp-notificador',
+  templateUrl: './servapp-notificador.component.html',
+  styleUrls: ['./servapp-notificador.component.css']
 })
-export class HomeComponent {
+export class ServappNotificadorComponent {
 
+  servappList = servappList;
 
   tiles: Tile[] = [
     {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
     {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
     {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];  
+  ]; 
+  
+  dataSource = servappList; 
 
 }

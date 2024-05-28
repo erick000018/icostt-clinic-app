@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 import { MainDashboardModule } from './components/main-dashboard/main-dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './components/angular-material/angular-material.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { NgFor } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,10 @@ import { AngularMaterialModule } from './components/angular-material/angular-mat
   providers: [],
   bootstrap: [AppComponent],
   exports:[
-    AngularMaterialModule
+    AngularMaterialModule,
+    MatFormFieldModule, MatInputModule, MatSelectModule
+    //import de grid
+    ,MatGridListModule, NgFor    
   ]
 })
 export class AppModule { }

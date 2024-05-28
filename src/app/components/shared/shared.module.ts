@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { LayoutSidenavComponent } from './layout-sidenav/layout-sidenav.component';
 import { RouterModule } from '@angular/router';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -14,6 +18,9 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
     CommonModule,
     RouterModule,
     AngularMaterialModule
+    , MatFormFieldModule, MatInputModule, MatSelectModule
+    //import de grid
+    ,MatGridListModule, NgFor    
   ],
   exports: [LayoutSidenavComponent]  
 })
