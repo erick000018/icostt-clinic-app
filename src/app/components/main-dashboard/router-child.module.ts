@@ -11,6 +11,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { CitaComponent } from './cita/cita/cita.component';
 import { ServappComponent } from './servapp/servapp/servapp.component';
 import { ServappNotificadorComponent } from './servapp/servapp-notificador/servapp-notificador.component';
+import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const childRoutes: Routes = [
 { path: '', component: HomeComponent },
@@ -28,6 +32,10 @@ const childRoutes: Routes = [
         MatFormFieldModule, MatInputModule, MatSelectModule
         //import de grid
         ,MatGridListModule, NgFor
+        //
+        ,FormsModule
+        //Para el datepicker
+        ,MatCardModule, MatDatepickerModule, MatNativeDateModule
     ],
     exports: [RouterModule]
 })

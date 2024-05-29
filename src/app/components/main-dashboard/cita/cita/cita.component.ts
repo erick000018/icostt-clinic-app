@@ -27,4 +27,6 @@ export class CitaComponent {
   displayedColumns: string[] = ['id', 'fecha', 'hora', 'cliente','motivo'];
   dataSource = citaList;
 
+  selected?: Date | null;
+
 }

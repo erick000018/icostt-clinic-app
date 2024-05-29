@@ -1,40 +1,4 @@
-table {
-    width: 100%;
-}
-
-ul li {
-    list-style: none;
-}
-
 .alinear {
     text-align: center;
     margin-top: 20px;
-}
-
-.right{
-    margin-left: auto;
-}
-
-mat-form-field{
-    width: 140%;
-}
-
-.mat-cell:nth-child(1),
-.mat-header-cell:nth-child(1){
-    flex: 0 0 6%;
-}
-
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  mat-grid-tile {
-    background: lightblue;
-  }
-
-  .mat-grid-list {
-    display: block;
-    position: static;
 }
