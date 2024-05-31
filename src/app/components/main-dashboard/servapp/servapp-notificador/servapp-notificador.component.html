@@ -1,34 +1,204 @@
-<!-- <mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
+<!-- Banner -->
+<!-- <mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile [colspan]="4" [rowspan]="2" [style.background]="'white'">
+    <img src="./assets/bannerjpg_rec.jpg">
+  </mat-grid-tile>
 </mat-grid-list> -->
-
-<mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile
-        *ngFor="let tile of tiles"
-        [colspan]="tile.cols"
-        [rowspan]="tile.rows"
-        [style.background]="tile.color">
-      {{tile.text}}
-    </mat-grid-tile>
-  </mat-grid-list>
-  
-  <div id="contenedor" style="width:100%; height:100%;">
-  <mat-card>
-    <h2 class="alinear">Gestor de notificaciones</h2>
-    <mat-card-header>
-      <div>
-        <mat-form-field hintLabel="Busque servapp" appearance="fill">
-  
-          <mat-label>Buscar servapp</mat-label>
-          <input matInput >
-      </mat-form-field>
-
-      </div>
-    </mat-card-header>
-  
-  </mat-card>
+<div class="banner">
+  <div class="banner__bg">
+    <div class="banner__container">
+      <img class="banner__img" src="./assets/bannerjpg_rec.jpg" alt="banner" />
+    </div>
   </div>
+</div>
 
+<!-- QR y progressbar -->
+<mat-grid-list cols="4" rowHeight="150px" style="border-color: gray;">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
+    <img src="./assets/qr.jpg">
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'white'">
+    <h1 class="alinear">Gestor de notificaciones</h1>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
+    <!-- <img src="./assets/progress_line.jpg" class="alinear"> -->
+    <mat-card class="example-card">
+      <mat-card-content>
+        <h2 class="example-h2">Etapas: 4</h2>
+        <!-- <div class="spinner-container">
+          <div class="spinner-background">{{spinner.value}}%</div> -->
+        <div class="spinner-background">Gestión</div>
+        <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'indeterminate'" [value]="">
+        </mat-progress-spinner>
+        <!-- </div> -->
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-card>
+  <mat-card-header style="background-color: white;">
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field hintLabel="Identificador de usuario" appearance="fill" class="example-full-width" style>
+            <mat-label>Nro. Documento</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Servicio</mat-label>
+            <mat-select>
+              <mat-option value="1">Consulta general</mat-option>
+              <mat-option value="2">Evaluación por laboratorio</mat-option>
+              <mat-option value="3">Control</mat-option>
+              <mat-option value="3">Chequeo anual</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+            <mat-label>Nombres</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td><mat-form-field class="example-full-width">
+            <mat-label>Apellidos</mat-label>
+            <input matInput>
+          </mat-form-field></td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Ex. pat@example.com">
+          </mat-form-field>
+        </td>
+        <td>
+          <p>Confirmar notificación por email</p>
+          <!-- <mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{isChecked}}</mat-slide-toggle> -->
+          <mat-slide-toggle [checked]="true" color="primary"> </mat-slide-toggle>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Nro. celular</mat-label>
+            <input matInput placeholder="Nro. celular">
+          </mat-form-field>
+        </td>
+        <td>
+          <p>Confirmar notificación celular</p>
+          <!-- <mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{isChecked}}</mat-slide-toggle> -->
+          <mat-slide-toggle [checked]="true" color="primary"> </mat-slide-toggle>
+        </td>
+      </tr>
+
+
+
+    </table>
+  </mat-card-header>
+  <mat-card-header>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" hintLabel="Hora programada de cita">
+            <mat-label>18:00</mat-label>
+            <input matInput placeholder="">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" hintLabel="Horas anticipadas a cita">
+            <mat-label>Horas</mat-label>
+            <input matInput placeholder="Horas">
+          </mat-form-field>
+
+        </td>
+        <td>
+          <p>Notificar horas anticipadas</p>          
+          <!-- <mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{isChecked}}</mat-slide-toggle> -->
+          <mat-slide-toggle [checked]="true" color="primary"> </mat-slide-toggle>
+
+          <p>Notificar 1 día antes</p>
+          <!-- <mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{isChecked}}</mat-slide-toggle> -->
+          <mat-slide-toggle [checked]="true" color="primary"> </mat-slide-toggle>
+        </td>
+      </tr>
+    </table>
+
+  </mat-card-header>
+
+  <mat-card-header>
+    <div class="right">
+      <ul>
+        <li>
+          <button mat-raised-button color="primary">Guardar</button>
+        </li>
+      </ul>
+    </div>
+  </mat-card-header>
+
+  <div mat-card-image></div>
+  <!-- 
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-cell">
+      <! --- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -- >
+      <! -- Position Column -- >
+      <ng-container matColumnDef="servappID">
+        <th mat-header-cell *matHeaderCellDef> servappID. </th>
+        <td mat-cell *matCellDef="let element"> {{element.servappID}} </td>
+      </ng-container>
+
+      <! -- Name Column -- >
+      <ng-container matColumnDef="appointmentID">
+        <th mat-header-cell *matHeaderCellDef> appointmentID </th>
+        <td mat-cell *matCellDef="let element"> {{element.appointmentID}} </td>
+      </ng-container>
+
+      <! -- Weight Column -- >
+      <ng-container matColumnDef="serviceID">
+        <th mat-header-cell *matHeaderCellDef> serviceID </th>
+        <td mat-cell *matCellDef="let element"> {{element.serviceID}} </td>
+      </ng-container>
+
+      <! -- Symbol Column -- >
+      <ng-container matColumnDef="serviceDate">
+        <th mat-header-cell *matHeaderCellDef> serviceDate </th>
+        <td mat-cell *matCellDef="let element"> {{element.serviceDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef> quantity </th>
+        <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="notes">
+        <th mat-header-cell *matHeaderCellDef> notes </th>
+        <td mat-cell *matCellDef="let element"> {{element.notes}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+
+-->
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-content>
+    <h2 class="example-h2">Tiempo restante para cita:</h2>
+    <!-- <div class="spinner-container">
+      <div class="spinner-background">{{spinner.value}}%</div> -->
+    <div class="spinner-background">9 Horas</div>
+    <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'determinate'" [value]="60">
+    </mat-progress-spinner>
+    <!-- </div> -->
+  </mat-card-content>
+</mat-card>

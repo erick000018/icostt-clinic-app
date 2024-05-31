@@ -1,17 +1,90 @@
 <!-- Banner -->
-<mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile
-    [colspan]="4"
-    [rowspan]="2" 
-    [style.background]="'white'">
-      <img src="./assets/bannerjpg_rec.jpg">
-    </mat-grid-tile>
+<!-- <mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile [colspan]="4" [rowspan]="2" [style.background]="'white'">
+    <img src="./assets/bannerjpg_rec.jpg">
+  </mat-grid-tile>
+</mat-grid-list> -->
+<div class="banner">
+  <div class="banner__bg">
+    <div class="banner__container">
+      <img class="banner__img" src="./assets/bannerjpg_rec.jpg" alt="banner" />
+    </div>
+  </div>
+</div>
+
+<!-- QR y progressbar -->
+<mat-grid-list cols="4" rowHeight="150px" style="border-color: gray;">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
+    <!-- <img src="./assets/qr.jpg"> -->
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'white'">
+    <h1 class="alinear">Módulo principal / Links QR</h1>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <h2 class="example-h2">Citados (30)</h2>
+        <!-- <div class="spinner-container">
+          <div class="spinner-background">{{spinner.value}}%</div> -->
+        <div class="spinner-background">Faltan 10</div>
+        <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'determinate'" [value]="66">
+        </mat-progress-spinner>
+        <!-- </div> -->
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
 </mat-grid-list>
 
-<h2 class="alinear">Módulo principal / Links QR</h2>
-<h3 >Muestra el módulo principal con la lista de QRs</h3>
+<!-- <h2 class="alinear">Módulo principal / Links QR</h2>
+<h3 >Muestra el módulo principal con la lista de QRs</h3> -->
 
-<mat-grid-list cols="4" rowHeight="100px">
+
+
+<mat-card>
+  <mat-card-header>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <img src="./assets/qr.jpg">
+          <h3 class="alinear">Registro paciente nuevo (Link QR)</h3>
+        </td>
+        <td>
+          <img src="./assets/qr.jpg">
+          <h3 class="alinear">Registro paciente</h3>
+        </td>
+        <td>
+          <img src="./assets/qr.jpg">
+          <h3 class="alinear">Asignar cita</h3>
+        </td>
+        <td>
+          <img src="./assets/qr.jpg">
+          <h3 class="alinear">Seguimiento</h3>
+        </td>        
+      </tr>
+      <tr>
+        <td>
+          <img src="./assets/qr.jpg">
+          <h3 class="alinear">Contenidos QR</h3>
+        </td>
+        <td>
+          <img src="./assets/qr.jpg">
+          <h3 class="alinear">Gestor de notificaciones</h3>
+        </td>
+        <td>
+
+        </td>
+        <td>
+          <img src="./assets/print.jpg">
+        </td>        
+      </tr>    
+    </table>
+
+  </mat-card-header>
+
+</mat-card>
+
+
+<!-- <mat-grid-list cols="4" rowHeight="100px">
   <mat-grid-tile [colspan]="1" [rowspan]="2" [style.background]="'white'">
     <img src="./assets/qr.jpg">
     <h3 class="alinear"> Registro paciente nuevo (Link QR)</h3>
@@ -49,4 +122,4 @@
   <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
     <img src="./assets/print.jpg">
   </mat-grid-tile>  
-</mat-grid-list> 
+</mat-grid-list>  -->

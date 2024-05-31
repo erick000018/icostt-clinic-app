@@ -1,85 +1,126 @@
-<!-- <mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list> -->
-
 <!-- Banner -->
-<mat-grid-list cols="4" rowHeight="100px">
+<!-- <mat-grid-list cols="4" rowHeight="100px">
   <mat-grid-tile [colspan]="4" [rowspan]="2" [style.background]="'white'">
     <img src="./assets/bannerjpg_rec.jpg">
   </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->
+<div class="banner">
+  <div class="banner__bg">
+    <div class="banner__container">
+      <img class="banner__img" src="./assets/bannerjpg_rec.jpg" alt="banner" />
+    </div>
+  </div>
+</div>
 
-<!-- <h2 class="alinear">Registrar paciente</h2> -->
 <!-- QR y progressbar -->
-<mat-grid-list cols="4" rowHeight="200px" style="border-color: gray;">
+<mat-grid-list cols="4" rowHeight="150px" style="border-color: gray;">
   <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
     <img src="./assets/qr.jpg">
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'white'">
     <h1 class="alinear">Registro</h1>
   </mat-grid-tile>
-  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'white'">
-    <img src="./assets/progress_line.jpg" class="alinear">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
+    <!-- <img src="./assets/progress_line.jpg" class="alinear"> -->
+    <mat-card class="example-card">
+      <mat-card-content>
+        <h2 class="example-h2">Etapas: 4</h2>
+        <!-- <div class="spinner-container">
+          <div class="spinner-background">{{spinner.value}}%</div> -->
+        <div class="spinner-background">Etapa 1</div>
+        <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'determinate'" [value]="25">
+        </mat-progress-spinner>
+        <!-- </div> -->
+      </mat-card-content>
+    </mat-card>
   </mat-grid-tile>
-</mat-grid-list> 
+</mat-grid-list>
 
 <!-- Contenido global del page -->
 
 
 <div id="contenedor" style="width:100%; height:100%;">
 <mat-grid-list cols="4" rowHeight="100px">
-  <mat-grid-tile [colspan]="1" [rowspan]="5" [style.background]="'lightblue'">
+  <mat-grid-tile [colspan]="1" [rowspan]="5" [style.background]="'#hwb(204 73% 0%)'">
     <img src="./assets/profile.jpg">
   </mat-grid-tile>
   <mat-grid-tile [colspan]="3" [rowspan]="5" [style.background]="'white'">
 
     <form class="example-form" > 
-      <mat-form-field class="example-full-width">
-        <mat-label>Company (disabled)</mat-label>
-        <input matInput disabled value="Google">
+
+      <mat-form-field hintLabel="Identificador de usuario" appearance="fill" class="example-full-width" style>
+        <mat-label>Nro. Documento</mat-label>
+        <input matInput >
       </mat-form-field>
     
       <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
-          <mat-label>First name</mat-label>
+          <mat-label>Nombres</mat-label>
           <input matInput>
         </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
-          <mat-label>Long Last Name That Will Be Truncated</mat-label>
+          <mat-label>Apellidos</mat-label>
           <input matInput>
         </mat-form-field></td>
       </tr></table>
     
       <p>
         <mat-form-field class="example-full-width">
-          <mat-label>Address</mat-label>
-          <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+          <mat-label>Dirección</mat-label>
+          <textarea matInput placeholder="Ex. 100 Main St">Av. surco 007</textarea>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Address 2</mat-label>
-          <textarea matInput></textarea>
-        </mat-form-field>
+
       </p>
-    
+
+      <table>      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Ex. pat@example.com">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Nro. celular</mat-label>
+            <input matInput placeholder="Nro. celular">
+          </mat-form-field>
+        </td>
+      </tr>
+      </table>
+
       <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field class="example-full-width">
-          <mat-label>City</mat-label>
+          <mat-label>Ciudad</mat-label>
           <input matInput placeholder="Ex. San Francisco">
         </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
-          <mat-label>State</mat-label>
+          <mat-label>País</mat-label>
           <input matInput placeholder="Ex. California">
         </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
-          <mat-label>Postal Code</mat-label>
+          <mat-label>Cod. postal</mat-label>
           <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
           <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
         </mat-form-field></td>
-      </tr></table>
-      <div class="example-button-row">
-        <button mat-raised-button color="primary">Guardar</button>
-      </div>      
+      </tr>
+
+    </table>
+    <table>
+      <tr>
+        <td>
+          <p>Aplicar permisos de seguimiento</p>          
+          <mat-slide-toggle [checked]="true" color="primary"> </mat-slide-toggle>
+        </td>
+        <td>
+          <div class="example-button-row">
+            <button mat-raised-button color="primary">Guardar</button>
+          </div>  
+
+        </td>
+      </tr>
+    </table>
+
+    
     </form>
     
 

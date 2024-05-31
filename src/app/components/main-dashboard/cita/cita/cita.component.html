@@ -1,18 +1,38 @@
 <!-- Banner -->
-<mat-grid-list cols="4" rowHeight="100px">
+<!-- <mat-grid-list cols="4" rowHeight="100px">
   <mat-grid-tile [colspan]="4" [rowspan]="2" [style.background]="'white'">
     <img src="./assets/bannerjpg_rec.jpg">
   </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->
+<div class="banner">
+  <div class="banner__bg">
+    <div class="banner__container">
+      <img class="banner__img" src="./assets/bannerjpg_rec.jpg" alt="banner" />
+    </div>
+  </div>
+</div>
 
 <!-- QR y progressbar -->
-<mat-grid-list cols="4" rowHeight="200px" style="border-color: gray;">
+<mat-grid-list cols="4" rowHeight="150px" style="border-color: gray;">
   <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
     <img src="./assets/qr.jpg">
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="'white'">
     <h1 class="alinear">Asignar cita</h1>
   </mat-grid-tile>
-  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'white'">
-    <img src="./assets/progress_line.jpg" class="alinear">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'white'">
+    <!-- <img src="./assets/progress_line.jpg" class="alinear"> -->
+    <mat-card class="example-card">
+      <mat-card-content>
+        <h2 class="example-h2">Etapas: 4</h2>
+        <!-- <div class="spinner-container">
+          <div class="spinner-background">{{spinner.value}}%</div> -->
+        <div class="spinner-background">Etapa 2</div>
+        <mat-progress-spinner class="example-margin" [color]="'primary'" [mode]="'determinate'" [value]="50">
+        </mat-progress-spinner>
+        <!-- </div> -->
+      </mat-card-content>
+    </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
 
@@ -21,85 +41,98 @@
 <div id="contenedor" style="width:100%; height:100%;">
 
   <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>Buscar usuario</mat-card-title>
-        <mat-card-subtitle class="card-subti">
-          <mat-card class="demo-inline-calendar-card">
-            <mat-calendar [(selected)]="selected"></mat-calendar>
-          </mat-card>
-          <p>Fecha seleccionada para cita: {{selected}}</p>
-        </mat-card-subtitle>
-        <form class="example-form">
-          <mat-form-field class="example-full-width">
-            <mat-label>Ingresar Nro. Doc</mat-label>
-            <input matInput value="">
-          </mat-form-field>
+    <table>
+      <tr>
+        <td>
+          <mat-card-title>Buscar usuario</mat-card-title>
+          <mat-card-subtitle class="card-subti">
+            <mat-card class="demo-inline-calendar-card">
+              <mat-calendar [(selected)]="selected"></mat-calendar>
+            </mat-card>
+            <p>Fecha seleccionada para cita: {{selected}}</p>
+          </mat-card-subtitle>
+        </td>
+        <td>
 
-          <table class="example-full-width" cellspacing="0">
-            <tr>
-              <td><mat-form-field class="example-full-width">
-                  <mat-label>Nombres</mat-label>
+          <form class="example-form">
+
+
+            <table class="example-full-width" cellspacing="0">
+              <tr>
+                <mat-form-field hintLabel="Identificador de usuario"  class="example-full-width" style>
+                  <mat-label>Nro. Documento</mat-label>
                   <input matInput>
-                </mat-form-field></td>
-            </tr>
-            <tr>
-              <td><mat-form-field class="example-full-width">
-                  <mat-label>Apellidos</mat-label>
-                  <input matInput>
-                </mat-form-field></td>
-            </tr>
-          </table>
-
-
-
-          <table class="example-full-width" cellspacing="0">
-            <tr>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <mat-label>Email</mat-label>
-                  <input type="email" matInput placeholder="Ex. pat@example.com">
                 </mat-form-field>
-              </td>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <mat-label>Phone number</mat-label>
-                  <input matInput placeholder="Phone number">
-                </mat-form-field>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="example-button-row">
-                  <button mat-raised-button color="primary">Registrar cita</button>
-                </div>  
-              </td>
-            </tr>
-            <tr></tr>
-            <tr>
-              <td>
-                <mat-form-field class="example-full-width">
-                  <mat-label>Hora de cita (HH:MM)</mat-label>
-                  <input matInput placeholder="Hora:minuto">
-                </mat-form-field>                
-              </td>              
-              <td>
-                <mat-form-field>
-                  <mat-label>Seleccionar servicio</mat-label>
-                  <mat-select>
-                    <mat-option value="1">Consulta general</mat-option>
-                    <mat-option value="2">Evaluación por laboratorio</mat-option>
-                    <mat-option value="3">Control</mat-option>
-                    <mat-option value="3">Chequeo anual</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </td>
 
-            </tr>
-          </table>
-        </form>
-      </mat-card-title-group>
-    </mat-card-header>
+
+              </tr>
+              <tr>
+                <td><mat-form-field class="example-full-width">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </td>
+                <td><mat-form-field class="example-full-width">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput>
+                  </mat-form-field></td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput placeholder="Ex. pat@example.com">
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Nro. celular</mat-label>
+                    <input matInput placeholder="Nro. celular">
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="example-button-row">
+                    <button mat-raised-button color="primary">Registrar cita</button>
+                  </div>
+                </td>
+                <td>
+                  <p>Aplicar configuración notificaciones (default)</p>
+                  <mat-slide-toggle [checked]="true" color="primary"> </mat-slide-toggle>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Hora de cita (HH:MM)</mat-label>
+                    <input matInput placeholder="Hora:minuto">
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Seleccionar servicio</mat-label>
+                    <mat-select>
+                      <mat-option value="1">Consulta general</mat-option>
+                      <mat-option value="2">Evaluación por laboratorio</mat-option>
+                      <mat-option value="3">Control</mat-option>
+                      <mat-option value="3">Chequeo anual</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+
+          </form>
+        </td>
+      </tr>
+    </table>
+
+
+
+
+
+
     <mat-card-content>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -113,26 +146,31 @@
         </ng-container>
 
         <!-- Name Column -->
-        <ng-container matColumnDef="fecha">
-          <th mat-header-cell *matHeaderCellDef> fecha </th>
-          <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+        <ng-container matColumnDef="fechaText">
+          <th mat-header-cell *matHeaderCellDef>Fecha </th>
+          <td mat-cell *matCellDef="let element"> {{element.fechaText}} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="hora">
-          <th mat-header-cell *matHeaderCellDef> hora </th>
+          <th mat-header-cell *matHeaderCellDef>Hora </th>
           <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="servicio">
+          <th mat-header-cell *matHeaderCellDef>Servicio </th>
+          <td mat-cell *matCellDef="let element"> {{element.servicio}} </td>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="cliente">
-          <th mat-header-cell *matHeaderCellDef> cliente </th>
+          <th mat-header-cell *matHeaderCellDef>Paciente </th>
           <td mat-cell *matCellDef="let element"> {{element.cliente}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="motivo">
-          <th mat-header-cell *matHeaderCellDef> motivo </th>
-          <td mat-cell *matCellDef="let element"> {{element.motivo}} </td>
+        <ng-container matColumnDef="dr">
+          <th mat-header-cell *matHeaderCellDef>Dr(a) </th>
+          <td mat-cell *matCellDef="let element"> {{element.dr}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
